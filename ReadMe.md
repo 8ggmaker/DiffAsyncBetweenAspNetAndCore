@@ -20,7 +20,7 @@ private Task DoShortTask()
 
 ```csharp
 [HttpGet]
-public long GetValue()
+public async Task<long> GetValue()
 {
     await DoShortTask();
     return 0; // response returns after DoShortTask finished.
