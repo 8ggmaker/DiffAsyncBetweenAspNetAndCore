@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonAsync", "CommonAsync\CommonAsync.csproj", "{0CB91651-1B76-465B-AB4A-088D3557C240}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonAsync", "CommonAsync\CommonAsync.csproj", "{0CB91651-1B76-465B-AB4A-088D3557C240}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetWeb", "AspNetWeb\AspNetWeb.csproj", "{9F8AECA0-BCF3-4956-8ED5-91D9103EE9F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreWeb", "AspNetCoreWeb\AspNetCoreWeb.csproj", "{1940755E-B274-477A-B578-EDF424ED53E0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9F8AECA0-BCF3-4956-8ED5-91D9103EE9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F8AECA0-BCF3-4956-8ED5-91D9103EE9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F8AECA0-BCF3-4956-8ED5-91D9103EE9F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1940755E-B274-477A-B578-EDF424ED53E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1940755E-B274-477A-B578-EDF424ED53E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1940755E-B274-477A-B578-EDF424ED53E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1940755E-B274-477A-B578-EDF424ED53E0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,9 +9,12 @@ namespace AspNetWeb.Controllers
 {
     public partial class ValueController
     {
+        /// <summary>
         /// Can increase 'CommonAsyncHelper.Count', because we use 'SynchronizationContext.SetSynchronizationContext' to suppress SynchronizationContext explicitly,
         /// the callback ('Interlocked.Increment') of the async i/o action ('await httpclient.Getasync') does not need to be invoked in
         /// AspNetSynchronizationContext anymore, it will be dispatched to threadpool and get invoked.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/value/suppresssynccontext/cal")]
         public double CalWithSuppressSyncContext()

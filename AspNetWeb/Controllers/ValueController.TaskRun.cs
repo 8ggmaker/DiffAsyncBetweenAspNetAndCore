@@ -10,9 +10,12 @@ namespace AspNetWeb.Controllers
 {
     public partial class ValueController
     {
+        /// <summary>
         /// Can increase 'CommonAsyncHelper.Count', because we use 'TaskRun' to run 'CommonAsyncHelper.DoAsyncJobDefault' in ThreadPool,
         /// the current SynchronizationContext is not captured, and the callback ('Interlocked.Increment') of 
         /// the async i/o action ('await httpclient.Getasync') will get invoked in ThreadPool-Thread
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("api/value/taskrun/cal")]
         public double CalWithTaskRun()
