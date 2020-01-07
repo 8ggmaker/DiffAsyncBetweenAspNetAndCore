@@ -16,7 +16,7 @@ namespace AspNetWeb
         /// </summary>
         /// <param name="mode"></param>
         /// <returns></returns>
-        public async Task DoAsyncJobWithDignosticSyncContext()
+        public async Task DoAsyncJobWithDiagnosticSyncContext()
         {
             HttpApplication syncContext = HttpContext.Current.ApplicationInstance;
             SynchronizationContext.SetSynchronizationContext(new EmptySynchronizationContext());

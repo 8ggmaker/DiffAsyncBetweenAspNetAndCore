@@ -89,7 +89,7 @@
     <Compile Include="Controllers\ValueController.Awaitfalse.cs" />
     <Compile Include="Controllers\ValueController.cs" />
     <Compile Include="Controllers\ValueController.SuppressSyncContext.cs" />
-    <Compile Include="Controllers\ValueController.SyncContextDignostic.cs" />
+    <Compile Include="Controllers\ValueController.SyncContextDiagnostic.cs" />
     <Compile Include="Controllers\ValueController.TaskRun.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

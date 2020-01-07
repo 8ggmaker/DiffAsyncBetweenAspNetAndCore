@@ -9,11 +9,11 @@ namespace AspNetWeb.Controllers
     public partial class ValueController
     {
         [HttpGet]
-        [Route("api/value/dignostic/cal")]
-        public double CalWithDignostic()
+        [Route("api/value/diagnostic/cal")]
+        public double CalWithDiagnostic()
         {
             double res = new AspNetAsyncHelper().DoCalJob();
-            var _ = new AspNetAsyncHelper().DoAsyncJobWithDignosticSyncContext();
+            var _ = new AspNetAsyncHelper().DoAsyncJobWithDiagnosticSyncContext();
             return res;
         }
     }
