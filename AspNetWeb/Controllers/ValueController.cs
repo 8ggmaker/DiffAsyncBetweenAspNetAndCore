@@ -14,7 +14,7 @@ namespace AspNetWeb.Controllers
         [Route("api/value")]
         public long Get()
         {
-            return CommonAsyncHelper.GetCount();
+            return new CommonAsyncHelper().GetCount();
         }
         /// <summary>
         /// Can not increase 'CommonAsyncHelper.Count', because there is no await keyword, 
@@ -27,8 +27,8 @@ namespace AspNetWeb.Controllers
         [Route("api/value/cal")]
         public double Cal()
         {
-            double res = CommonAsyncHelper.DoCalJob();
-            var _ = CommonAsyncHelper.DoAsyncJobDefault();
+            double res = new CommonAsyncHelper().DoCalJob();
+            var _ = new CommonAsyncHelper().DoAsyncJobDefault();
             return res;
         }
        

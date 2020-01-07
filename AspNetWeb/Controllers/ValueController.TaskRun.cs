@@ -17,8 +17,8 @@ namespace AspNetWeb.Controllers
         [Route("api/value/taskrun/cal")]
         public double CalWithTaskRun()
         {
-            double res = CommonAsyncHelper.DoCalJob();
-            Task.Run(()=>CommonAsyncHelper.DoAsyncJobDefault());
+            double res = new CommonAsyncHelper().DoCalJob();
+            Task.Run(()=>new CommonAsyncHelper().DoAsyncJobDefault());
             return res;
         }
     }

@@ -16,8 +16,8 @@ namespace AspNetWeb.Controllers
         [Route("api/value/awaitfalse/cal")]
         public double CalWithAwaitfalse()
         {
-            double res = CommonAsyncHelper.DoCalJob();
-            var _ = CommonAsyncHelper.DoAsyncJobConfigureAwaitfalse();
+            double res = new CommonAsyncHelper().DoCalJob();
+            var _ = new CommonAsyncHelper().DoAsyncJobConfigureAwaitfalse();
             return res;
         }
     }

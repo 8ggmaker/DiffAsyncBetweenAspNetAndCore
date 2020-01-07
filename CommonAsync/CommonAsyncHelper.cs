@@ -15,50 +15,62 @@ namespace CommonAsync
     }
     public class CommonAsyncHelper
     {
-        private static HttpClient httpClient = new HttpClient();
+        protected static HttpClient httpClient = new HttpClient();
 
-        private static long count = 0;
+        protected static long count = 0;
 
-        public static async Task DoAsyncJobDefault()
+        public async Task DoAsyncJobDefault()
         {
             await DoAsyncJobDetail(AwaitCallbackMode.Default).ConfigureAwait(false);
         }
 
-        public static async Task DoAsyncJobSuppressContext()
+        public async Task DoAsyncJobSuppressContext()
         {
             await DoAsyncJobDetail(AwaitCallbackMode.ExplicitSuppressContext).ConfigureAwait(false);
         }
 
-        public static async Task DoAsyncJobConfigureAwaitfalse()
+        public async Task DoAsyncJobConfigureAwaitfalse()
         {
             await DoAsyncJobDetail(AwaitCallbackMode.ConfigureAwaitFalse).ConfigureAwait(false);
         }
 
-        private static async Task DoAsyncJobDetail(AwaitCallbackMode mode)
+        private async Task DoAsyncJobDetail(AwaitCallbackMode mode)
         {
             if(mode== AwaitCallbackMode.ExplicitSuppressContext)
             {
                 SynchronizationContext.SetSynchronizationContext(new EmptySynchronizationContext());
-                await httpClient.GetAsync("https://www.microsoft.com");
+                await DoIOJob();
             }
             else if(mode == AwaitCallbackMode.ConfigureAwaitFalse)
             {
-                await httpClient.GetAsync("https://www.microsoft.com").ConfigureAwait(false);
+                await DoIOJob().ConfigureAwait(false) ;
             }
             else
             {
-                await httpClient.GetAsync("https://www.microsoft.com");
+                await DoIOJob();
             }
             Interlocked.Increment(ref count);
         }
 
+        protected async Task DoIOJob()
+        {
+            try
+            {
+                await httpClient.GetAsync("https://www.microsoft.com").ConfigureAwait(false);
+            }
+            catch
+            {
 
-        public static long GetCount()
+            }
+        }
+
+
+        public long GetCount()
         {
             return count;
         }
 
-        public static double DoCalJob()
+        public double DoCalJob()
         {
             double res = 1;
             for(int i = 1; i < 10; i++)

@@ -16,8 +16,8 @@ namespace AspNetWeb.Controllers
         [Route("api/value/suppresssynccontext/cal")]
         public double CalWithSuppressSyncContext()
         {
-            double res = CommonAsyncHelper.DoCalJob();
-            var _ = CommonAsyncHelper.DoAsyncJobSuppressContext();
+            double res = new CommonAsyncHelper().DoCalJob();
+            var _ = new CommonAsyncHelper().DoAsyncJobSuppressContext();
             return res;
         }
     }
