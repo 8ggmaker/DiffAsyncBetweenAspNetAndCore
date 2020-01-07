@@ -19,7 +19,7 @@ namespace AspNetWeb.Controllers
         /// <summary>
         /// Can not increase 'CommonAsyncHelper.Count', because there is no await keyword, 
         /// code will continue to execute before 'CommonAsyncHelper.DoAsyncJobDefault' finished,
-        /// and after the 'return res' statement, the AspNetSynchronizationContext is not exist any more, 
+        /// and after the 'return res' statement, the AspNetSynchronizationContext does not exist any more, 
         /// the callback ('Interlocked.Increment') of the async i/o action ('await httpclient.Getasync') can not be invoked.
         /// </summary>
         /// <returns></returns>
