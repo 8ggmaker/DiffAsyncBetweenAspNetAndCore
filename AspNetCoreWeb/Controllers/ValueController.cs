@@ -17,7 +17,7 @@ namespace AspNetCoreWeb.Controllers
             return new CommonAsyncHelper().GetCount();
         }
         /// <summary>
-        /// Can increase 'CommonAsyncHelper.Count', because there is no await keyword, asp-net-core does not have SynchronizationContext
+        /// Can increase 'CommonAsyncHelper.Count', because asp-net-core does not have SynchronizationContext
         /// </summary>
         /// <returns></returns>
         [HttpGet]
